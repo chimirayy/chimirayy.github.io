@@ -238,19 +238,29 @@
       <ellipse cx="675" cy="52" rx="30" ry="12"/>
     </g>
 
-    <!-- far mountains -->
-    <path d="M0,230 L120,140 260,210 400,110 560,205 700,130 860,215 1010,120 1200,190 L1200,460 L0,460 Z" fill="var(--mtn-far)" opacity="0.85"/>
-    <!-- mid mountains with snow caps -->
-    <path d="M0,300 L180,190 340,270 520,160 700,260 880,175 1050,255 1200,215 L1200,460 L0,460 Z" fill="var(--mtn-mid)"/>
-    <path d="M180,190 L210,205 150,215 Z M520,160 L555,178 485,185 Z M880,175 L912,190 848,192 Z" fill="#f4faf6" opacity="0.9"/>
+    <!-- far mountains, smooth rolling ridgeline -->
+    <path d="M0,235 C90,175 160,150 250,175 C330,197 380,150 460,165 C540,180 600,135 690,155 C780,175 840,145 930,165 C1010,182 1070,150 1150,172 C1175,179 1190,185 1200,190 L1200,460 L0,460 Z" fill="var(--mtn-far)" opacity="0.85"/>
 
-    <!-- river -->
-    <path d="M560,170 C 520,230 610,260 570,320 C 540,365 610,400 580,460 L 470,460 C 500,400 440,365 470,320 C 500,265 420,235 460,175 Z" fill="var(--river)" opacity="0.9"/>
+    <!-- mid mountains, smooth rolling peaks -->
+    <path d="M0,300 C110,225 200,255 300,215 C390,180 460,235 550,205 C640,175 710,225 800,195 C880,168 950,210 1040,190 C1100,177 1150,195 1200,188 L1200,460 L0,460 Z" fill="var(--mtn-mid)"/>
+    <g fill="#f4faf6" opacity="0.85">
+      <ellipse cx="300" cy="208" rx="20" ry="8" transform="rotate(-10 300 208)"/>
+      <ellipse cx="550" cy="198" rx="20" ry="8" transform="rotate(8 550 198)"/>
+      <ellipse cx="800" cy="188" rx="18" ry="7" transform="rotate(-8 800 188)"/>
+      <ellipse cx="1040" cy="183" rx="16" ry="6" transform="rotate(10 1040 183)"/>
+    </g>
+
+    <!-- rolling hills, softer curves in front of the mountains -->
+    <path d="M0,345 C130,310 260,335 400,308 C520,285 640,325 780,300 C880,282 980,310 1080,292 C1130,283 1170,290 1200,285 L1200,460 L0,460 Z" fill="#6ea15a"/>
 
     <!-- farmland bands -->
-    <path d="M0,330 C150,310 300,350 460,330 C 620,310 780,345 940,325 C1060,312 1150,325 1200,318 L1200,460 L0,460 Z" fill="url(#field-a)"/>
-    <path d="M0,375 C160,360 320,390 480,372 C 640,356 800,385 960,368 C1060,358 1140,368 1200,362 L1200,460 L0,460 Z" fill="var(--field-b)" opacity="0.9"/>
-    <path d="M0,415 C180,405 360,428 540,412 C 720,398 900,420 1080,408 C1130,404 1170,408 1200,406 L1200,460 L0,460 Z" fill="var(--field-c)" opacity="0.85"/>
+    <path d="M0,370 C150,352 300,388 460,368 C620,350 780,382 940,362 C1060,350 1150,362 1200,356 L1200,460 L0,460 Z" fill="url(#field-a)"/>
+    <path d="M0,400 C160,388 320,415 480,398 C640,382 800,410 960,394 C1060,384 1140,392 1200,388 L1200,460 L0,460 Z" fill="var(--field-b)" opacity="0.9"/>
+    <path d="M0,430 C180,422 360,442 540,428 C720,415 900,435 1080,424 C1130,420 1170,424 1200,422 L1200,460 L0,460 Z" fill="var(--field-c)" opacity="0.85"/>
+
+    <!-- river, meandering down from a gap in the mountains through the hills and fields -->
+    <path d="M600,200 C560,240 630,265 580,300 C540,330 610,355 560,390 C520,415 600,435 560,460 L680,460 C640,435 600,415 640,390 C680,355 610,330 650,300 C690,265 620,240 660,200 Z" fill="var(--river)" opacity="0.92"/>
+    <path d="M600,200 C560,240 630,265 580,300 C540,330 610,355 560,390 C520,415 600,435 570,455" fill="none" stroke="#e8fbf8" stroke-width="3" opacity="0.5" stroke-linecap="round"/>
 
     <!-- flowers along the front field -->
     <g>
