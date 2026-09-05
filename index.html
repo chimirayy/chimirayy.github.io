@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>chimirayy — Projekte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sky-top: #5fa8d3;
+    --sky-bottom: #d9f0ee;
+    --mtn-far: #93a8c7;
+    --mtn-mid: #4f8067;
+    --field-a: #7fb15e;
+    --field-b: #e2bb52;
+    --field-c: #b3773f;
+    --river: #a3ded9;
+    --parchment: #fbf6e7;
+    --parchment-edge: #eee2c0;
+    --ink: #2e3b26;
+    --ink-soft: #5c6a4e;
+    --accent: #2f6b52;
+    --flower-pink: #ef92ab;
+    --flower-yellow: #ffd166;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--sky-bottom);
+    color: var(--ink);
+    font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  h1, .proj-name {
+    font-family: "Fraunces", Georgia, serif;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    height: 46vh;
+    min-height: 320px;
+    max-height: 460px;
+    overflow: hidden;
+  }
+
+  .hero svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero-text {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 10%;
+    padding: 0 1.5rem;
+    text-align: center;
+  }
+
+  .kicker {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #fff;
+    background: rgba(46, 59, 38, 0.35);
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    margin: 0 0 1rem;
+  }
+
+  .hero-text h1 {
+    font-size: clamp(1.7rem, 4vw, 2.6rem);
+    font-weight: 600;
+    color: #fff;
+    margin: 0 auto 0.6rem;
+    max-width: 20ch;
+    text-shadow: 0 2px 14px rgba(20, 40, 20, 0.35);
+  }
+
+  .hero-text p {
+    color: #eef7f2;
+    font-size: 1rem;
+    max-width: 42ch;
+    margin: 0 auto;
+    text-shadow: 0 1px 8px rgba(20, 40, 20, 0.3);
+  }
+
+  /* bees */
+  .bee { transform-origin: center; }
+  @media (prefers-reduced-motion: no-preference) {
+    .bee-1 { animation: fly1 9s ease-in-out infinite; }
+    .bee-2 { animation: fly2 11s ease-in-out infinite; }
+    .wing  { animation: flap 0.15s ease-in-out infinite alternate; transform-origin: bottom center; }
+  }
+  @keyframes fly1 {
+    0%   { transform: translate(0, 0); }
+    25%  { transform: translate(40px, -18px); }
+    50%  { transform: translate(10px, -30px); }
+    75%  { transform: translate(-30px, -10px); }
+    100% { transform: translate(0, 0); }
+  }
+  @keyframes fly2 {
+    0%   { transform: translate(0, 0); }
+    30%  { transform: translate(-35px, 14px); }
+    60%  { transform: translate(-15px, -20px); }
+    100% { transform: translate(0, 0); }
+  }
+  @keyframes flap {
+    from { transform: scaleY(1); }
+    to   { transform: scaleY(0.55); }
+  }
+
+  /* ---------- Content ---------- */
+  main {
+    position: relative;
+    max-width: 680px;
+    margin: -2.2rem auto 0;
+    background: var(--parchment);
+    border: 1px solid var(--parchment-edge);
+    border-radius: 22px 22px 8px 8px;
+    box-shadow: 0 18px 40px rgba(46, 59, 38, 0.18);
+    padding: 2.6rem 2rem 2rem;
+  }
+
+  ul.projects {
+    list-style: none;
+    margin: 0 0 1rem;
+    padding: 0;
+  }
+
+  ul.projects li { margin: 0; }
+
+  .divider {
+    display: block;
+    width: 100%;
+    height: 14px;
+    margin: 0;
+  }
+  .divider path { fill: none; stroke: var(--parchment-edge); stroke-width: 2; }
+
+  ul.projects a {
+    display: flex;
+    gap: 0.9rem;
+    align-items: flex-start;
+    text-decoration: none;
+    color: inherit;
+    padding: 1.3rem 0;
+    border-radius: 10px;
+  }
+
+  .bullet { flex: none; width: 30px; height: 30px; margin-top: 0.15rem; }
+
+  .proj-body { flex: 1; }
+
+  .proj-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0 0 0.35rem;
+    color: var(--ink);
+  }
+
+  .proj-desc {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin: 0 0 0.6rem;
+    max-width: 50ch;
+  }
+
+  .proj-link {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  ul.projects a:hover .bullet,
+  ul.projects a:focus-visible .bullet {
+    animation: sway 0.6s ease-in-out;
+  }
+  @keyframes sway {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(-8deg); }
+  }
+
+  ul.projects a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  footer {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    text-align: center;
+    padding: 1.4rem 0 0.4rem;
+  }
+
+  @media (max-width: 560px) {
+    main { margin: -1.4rem 0.8rem 0; border-radius: 18px 18px 6px 6px; padding: 2rem 1.3rem 1.6rem; }
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <svg viewBox="0 0 1200 460" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of a blue sky, mountains, a river and flowering farmland">
+    <defs>
+      <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#4f96c7"/>
+        <stop offset="60%" stop-color="#8fc6dd"/>
+        <stop offset="100%" stop-color="#d9f0ee"/>
+      </linearGradient>
+      <radialGradient id="sun" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#fff6d8"/>
+        <stop offset="100%" stop-color="#ffe9a8" stop-opacity="0"/>
+      </radialGradient>
+      <linearGradient id="field-a" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#8fc26a"/>
+        <stop offset="100%" stop-color="#6da34f"/>
+      </linearGradient>
+    </defs>
+
+    <rect x="0" y="0" width="1200" height="460" fill="url(#sky)"/>
+    <circle cx="990" cy="95" r="90" fill="url(#sun)"/>
+    <circle cx="990" cy="95" r="34" fill="#fff3cf"/>
+
+    <!-- soft clouds -->
+    <g fill="#ffffff" opacity="0.75">
+      <ellipse cx="230" cy="90" rx="55" ry="18"/>
+      <ellipse cx="270" cy="80" rx="40" ry="16"/>
+      <ellipse cx="640" cy="60" rx="45" ry="14"/>
+      <ellipse cx="675" cy="52" rx="30" ry="12"/>
+    </g>
+
+    <!-- far mountains, smooth rolling ridgeline -->
+    <path d="M0,235 C90,175 160,150 250,175 C330,197 380,150 460,165 C540,180 600,135 690,155 C780,175 840,145 930,165 C1010,182 1070,150 1150,172 C1175,179 1190,185 1200,190 L1200,460 L0,460 Z" fill="var(--mtn-far)" opacity="0.85"/>
+
+    <!-- mid mountains, smooth rolling peaks -->
+    <path d="M0,300 C110,225 200,255 300,215 C390,180 460,235 550,205 C640,175 710,225 800,195 C880,168 950,210 1040,190 C1100,177 1150,195 1200,188 L1200,460 L0,460 Z" fill="var(--mtn-mid)"/>
+    <g fill="#f4faf6" opacity="0.85">
+      <ellipse cx="300" cy="208" rx="20" ry="8" transform="rotate(-10 300 208)"/>
+      <ellipse cx="550" cy="198" rx="20" ry="8" transform="rotate(8 550 198)"/>
+      <ellipse cx="800" cy="188" rx="18" ry="7" transform="rotate(-8 800 188)"/>
+      <ellipse cx="1040" cy="183" rx="16" ry="6" transform="rotate(10 1040 183)"/>
+    </g>
+
+    <!-- rolling hills, softer curves in front of the mountains -->
+    <path d="M0,345 C130,310 260,335 400,308 C520,285 640,325 780,300 C880,282 980,310 1080,292 C1130,283 1170,290 1200,285 L1200,460 L0,460 Z" fill="#6ea15a"/>
+
+    <!-- farmland bands -->
+    <path d="M0,370 C150,352 300,388 460,368 C620,350 780,382 940,362 C1060,350 1150,362 1200,356 L1200,460 L0,460 Z" fill="url(#field-a)"/>
+    <path d="M0,400 C160,388 320,415 480,398 C640,382 800,410 960,394 C1060,384 1140,392 1200,388 L1200,460 L0,460 Z" fill="var(--field-b)" opacity="0.9"/>
+    <path d="M0,430 C180,422 360,442 540,428 C720,415 900,435 1080,424 C1130,420 1170,424 1200,422 L1200,460 L0,460 Z" fill="var(--field-c)" opacity="0.85"/>
+
+    <!-- river, meandering down from a gap in the mountains through the hills and fields -->
+    <path d="M600,200 C560,240 630,265 580,300 C540,330 610,355 560,390 C520,415 600,435 560,460 L680,460 C640,435 600,415 640,390 C680,355 610,330 650,300 C690,265 620,240 660,200 Z" fill="var(--river)" opacity="0.92"/>
+    <path d="M600,200 C560,240 630,265 580,300 C540,330 610,355 560,390 C520,415 600,435 570,455" fill="none" stroke="#e8fbf8" stroke-width="3" opacity="0.5" stroke-linecap="round"/>
+
+    <!-- flowers along the front field -->
+    <g>
+      <g transform="translate(90,430)">
+        <circle cx="-6" cy="0" r="5" fill="#ef92ab"/><circle cx="6" cy="0" r="5" fill="#ef92ab"/>
+        <circle cx="0" cy="-6" r="5" fill="#ef92ab"/><circle cx="0" cy="6" r="5" fill="#ef92ab"/>
+        <circle cx="0" cy="0" r="4" fill="#ffd166"/>
+      </g>
+      <g transform="translate(150,442) scale(0.85)">
+        <circle cx="-6" cy="0" r="5" fill="#ffffff"/><circle cx="6" cy="0" r="5" fill="#ffffff"/>
+        <circle cx="0" cy="-6" r="5" fill="#ffffff"/><circle cx="0" cy="6" r="5" fill="#ffffff"/>
+        <circle cx="0" cy="0" r="4" fill="#f4a944"/>
+      </g>
+      <g transform="translate(980,436)">
+        <circle cx="-6" cy="0" r="5" fill="#ffd166"/><circle cx="6" cy="0" r="5" fill="#ffd166"/>
+        <circle cx="0" cy="-6" r="5" fill="#ffd166"/><circle cx="0" cy="6" r="5" fill="#ffd166"/>
+        <circle cx="0" cy="0" r="4" fill="#c1502e"/>
+      </g>
+      <g transform="translate(1050,448) scale(0.9)">
+        <circle cx="-6" cy="0" r="5" fill="#ef92ab"/><circle cx="6" cy="0" r="5" fill="#ef92ab"/>
+        <circle cx="0" cy="-6" r="5" fill="#ef92ab"/><circle cx="0" cy="6" r="5" fill="#ef92ab"/>
+        <circle cx="0" cy="0" r="4" fill="#ffd166"/>
+      </g>
+      <g transform="translate(700,450) scale(0.8)">
+        <circle cx="-6" cy="0" r="5" fill="#ffffff"/><circle cx="6" cy="0" r="5" fill="#ffffff"/>
+        <circle cx="0" cy="-6" r="5" fill="#ffffff"/><circle cx="0" cy="6" r="5" fill="#ffffff"/>
+        <circle cx="0" cy="0" r="4" fill="#f4a944"/>
+      </g>
+    </g>
+
+    <!-- bees -->
+    <g class="bee bee-1" transform="translate(330,235)">
+      <ellipse class="wing" cx="-2" cy="-6" rx="7" ry="4" fill="#eafaf6" opacity="0.85"/>
+      <ellipse cx="0" cy="0" rx="8" ry="5.5" fill="#2b2b2b"/>
+      <rect x="-3" y="-4.5" width="2.4" height="9" fill="#f4c245"/>
+      <rect x="2" y="-4.5" width="2.4" height="9" fill="#f4c245"/>
+    </g>
+    <g class="bee bee-2" transform="translate(830,205)">
+      <ellipse class="wing" cx="-2" cy="-6" rx="7" ry="4" fill="#eafaf6" opacity="0.85"/>
+      <ellipse cx="0" cy="0" rx="8" ry="5.5" fill="#2b2b2b"/>
+      <rect x="-3" y="-4.5" width="2.4" height="9" fill="#f4c245"/>
+      <rect x="2" y="-4.5" width="2.4" height="9" fill="#f4c245"/>
+    </g>
+  </svg>
+
+  <div class="hero-text">
+    <span class="kicker">chimirayy · projects</span>
+    <h1>Kleine Werkzeuge zum Deutschlernen.</h1>
+    <p>A running list of the practice tools I've built and published, tended like a garden — new ones get planted here as they go live.</p>
+  </div>
+</section>
+
+<main>
+  <ul class="projects" id="project-list"></ul>
+  <footer>Built and maintained by chimirayy.</footer>
+</main>
+
+<script>
+  // Add a new project by adding one object here — nothing else needs to change.
+  const projects = [
+    {
+      name: "Deutsch B1 Intensivtraining",
+      desc: "telc-format exam practice, split by task type: Lesen, Hören, Schreiben — each with its own timer and scoring.",
+      url: "https://chimirayy.github.io/german-exam-site/"
+    },
+    {
+      name: "Deutsch Werkstatt",
+      desc: "Grammar workbooks for A2, B1 and B2, sorted by topic and difficulty, plus a mixed quiz mode with instant feedback.",
+      url: "https://chimirayy.github.io/degrammar/"
+    }
+    // ,{ name: "New project", desc: "One line about it.", url: "https://chimirayy.github.io/new-project/" }
+  ];
+
+  const bulletColors = ["#ef92ab", "#ffd166", "#8fc26a"];
+
+  function flowerSVG(color) {
+    return `<svg class="bullet" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+      <g transform="translate(15,15)">
+        <circle cx="-7" cy="0" r="6" fill="${color}"/><circle cx="7" cy="0" r="6" fill="${color}"/>
+        <circle cx="0" cy="-7" r="6" fill="${color}"/><circle cx="0" cy="7" r="6" fill="${color}"/>
+        <circle cx="0" cy="0" r="5" fill="#2f6b52"/>
+      </g>
+    </svg>`;
+  }
+
+  function dividerSVG() {
+    return `<svg class="divider" viewBox="0 0 600 14" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,7 Q150,0 300,7 T600,7"/>
+    </svg>`;
+  }
+
+  const list = document.getElementById("project-list");
+  projects.forEach((p, i) => {
+    if (i > 0) {
+      const divLi = document.createElement("li");
+      divLi.innerHTML = dividerSVG();
+      list.appendChild(divLi);
+    }
+    const li = document.createElement("li");
+    li.innerHTML = `
+      <a href="${p.url}">
+        ${flowerSVG(bulletColors[i % bulletColors.length])}
+        <span class="proj-body">
+          <span class="proj-name">${p.name}</span>
+          <p class="proj-desc">${p.desc}</p>
+          <span class="proj-link">Open →</span>
+        </span>
+      </a>`;
+    list.appendChild(li);
+  });
+</script>
+</body>
+</html>
